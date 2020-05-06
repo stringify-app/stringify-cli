@@ -32,8 +32,7 @@
     "inquirer": "^7.0.5",
     "lodash": "^4.17.15",
     "log-symbols": "^3.0.0",
-    "ora": "^4.0.3",
-    "request": "^2.88.2",
-    "request-promise": "^4.2.5"
+    "node-fetch": "^2.6.0",
+    "ora": "^4.0.3"
   }
 }
