@@ -19,6 +19,9 @@
     "localization",
     "i18n"
   ],
+  "engines": {
+    "node": ">=8"
+  },
   "bin": {
     "stringify": "index.js"
   },
