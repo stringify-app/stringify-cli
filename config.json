@@ -1,5 +1,5 @@
 {
-  "apiUrl": "http://stringify-app.vagrantserver.com/api",
+  "apiUrl": "https://stringify.app/api",
   "userConfigFile": ".stringify.json",
   "projectConfigFile": "stringify.config.json",
   "formats": [
