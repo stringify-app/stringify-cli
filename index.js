@@ -17,10 +17,12 @@ const paths = {
     config: path.join(os.homedir(), globalConfig.userConfigFile)
 };
 
+const baseConfig = Object.assign({ paths }, globalConfig);
+
 let initPromise = Promise.resolve();
 
 if(!fs.existsSync(paths.config)){
-    initPromise = configureCommand(paths.config);
+    initPromise = configureCommand(baseConfig);
 }
 
 let program = null;
@@ -32,7 +34,7 @@ initPromise.then(() => {
 }).then((configJson) => {
 
     const userConfig = JSON.parse(configJson);
-    const config = Object.assign({ paths }, globalConfig, userConfig);
+    const config = Object.assign(baseConfig, userConfig);
 
     program = createProgram(config);
     return program.parseAsync(process.argv);
