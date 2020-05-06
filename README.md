@@ -1,0 +1,2 @@
+# stringify-cli
+Stringify CLI
