@@ -1,0 +1,17 @@
+{
+  "apiUrl": "http://stringify-app.vagrantserver.com/api",
+  "userConfigFile": ".stringify.json",
+  "projectConfigFile": "stringify.config.json",
+  "formats": [
+    {
+      "id": "apple",
+      "name": "Apple",
+      "defaultPath": "**/[locale].lproj/Localizable.strings"
+    },
+    {
+      "id": "android",
+      "name": "Android",
+      "defaultPath": "app/src/main/res/values-[locale]/strings.xml"
+    }
+  ]
+}
