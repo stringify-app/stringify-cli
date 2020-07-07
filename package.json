@@ -32,7 +32,7 @@
     "fs-extra": "^8.1.0",
     "glob": "^7.1.6",
     "graphql-request": "^1.8.2",
-    "inquirer": "^7.0.5",
+    "inquirer": "^7.3.0",
     "lodash": "^4.17.15",
     "log-symbols": "^3.0.0",
     "node-fetch": "^2.6.0",
