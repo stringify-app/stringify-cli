@@ -2,6 +2,7 @@
   "apiUrl": "https://stringify.app/api",
   "userConfigFile": ".stringify.json",
   "projectConfigFile": "stringify.config.json",
+  "projectLockFile": "stringify.lock.json",
   "formats": [
     {
       "id": "apple",
