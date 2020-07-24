@@ -20,7 +20,7 @@
     "i18n"
   ],
   "engines": {
-    "node": ">=8"
+    "node": ">=8.3"
   },
   "bin": {
     "stringify": "index.js"
@@ -35,6 +35,7 @@
     "inquirer": "^7.3.0",
     "lodash": "^4.17.15",
     "log-symbols": "^3.0.0",
+    "moment": "^2.27.0",
     "node-fetch": "^2.6.0",
     "ora": "^4.0.3"
   }
