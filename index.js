@@ -19,34 +19,30 @@ const paths = {
 
 const baseConfig = Object.assign({ paths }, globalConfig);
 
-let initPromise = Promise.resolve();
+async function start(){
 
-if(!fs.existsSync(paths.config)){
-    initPromise = configureCommand(baseConfig);
+    try {
+
+        if (!fs.existsSync(paths.config)) {
+            await configureCommand(baseConfig);
+        }
+
+        const configJson = await fs.readFile(paths.config, 'utf8');
+        const userConfig = JSON.parse(configJson);
+        const config = Object.assign(baseConfig, userConfig);
+
+        const program = createProgram(config);
+        const result = await program.parseAsync(process.argv);
+
+        if (!result.length) {
+            program.outputHelp();
+        }
+    }
+    catch(e){
+
+        Log.error(e);
+        process.exit();
+    }
 }
 
-let program = null;
-
-initPromise.then(() => {
-
-    return fs.readFile(paths.config, 'utf8');
-
-}).then((configJson) => {
-
-    const userConfig = JSON.parse(configJson);
-    const config = Object.assign(baseConfig, userConfig);
-
-    program = createProgram(config);
-    return program.parseAsync(process.argv);
-
-}).then((result) => {
-
-    if(!result.length){
-        program.outputHelp();
-    }
-
-}).catch(e => {
-
-    Log.error(e);
-    process.exit();
-});
+start();
