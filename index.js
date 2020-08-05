@@ -41,7 +41,7 @@ async function start(){
     catch(e){
 
         Log.error(e);
-        process.exit();
+        process.exitCode = 1;
     }
 }
 
