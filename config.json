@@ -1,5 +1,5 @@
 {
-  "apiUrl": "https://stringify.app/api",
+  "apiUrl": "https://api.stringify.app",
   "userConfigFile": ".stringify.json",
   "projectConfigFile": "stringify.config.json",
   "projectLockFile": "stringify.lock.json",
