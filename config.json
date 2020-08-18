@@ -18,6 +18,11 @@
       "id": "json",
       "name": "JSON",
       "defaultPath": "[locale].json"
+    },
+    {
+      "id": "phparray",
+      "name": "PHP array",
+      "defaultPath": "[locale].php"
     }
   ]
 }
