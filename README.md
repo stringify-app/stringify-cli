@@ -46,10 +46,23 @@ The `stringify sync` command runs the [push](#push) and [pull](#pull) commands s
 We recommend you to use this command instead of running the `push` and `pull` commands separately.
 
 ### pull
-Coming soon
+`stringify pull` downloads the latest version of the strings files from the server and stores them at the specified locations (see [config](#config)).
+Existing strings files will be overwritten with the downloaded version. 
+Please be aware this can result in the loss of the latest non-synchronized version of your files. 
+Therefore, we recommend you to run the `push` command first, or just use the `sync` command.
 
 ### push
+The `stringify push` command uploads the changes in your local strings files to the server. 
+Firstly, the local changes are inspected by comparing your local files with the latest version that was pulled from the server.
+The CLI lists all updated, created and deleted strings, and confirms wether the changes can be pushed to the server. 
+In case another user changed or added the same string after your last pull, a conflict occurs. 
+The CLI will subsequently ask you which version should be used in the final version.
+
+If new strings were created, you will be asked wether these strings should be marked as translated or not. 
+This can be useful when the created strings contain dummy or temporary content, that still has to be translated by the editor.
+
+## Files
+### Config
 Coming soon
 
-## Config file
-Coming soon
+### Lockfile
