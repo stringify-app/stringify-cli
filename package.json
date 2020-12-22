@@ -20,7 +20,7 @@
     "i18n"
   ],
   "engines": {
-    "node": ">=8.3"
+    "node": ">=10"
   },
   "bin": {
     "stringify": "index.js"
