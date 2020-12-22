@@ -3,7 +3,7 @@ The Stringify Command Line Interface (CLI) can be used to download and upload yo
 To get started, please follow the installation instructions below.
 
 ## Installation
-You can install the Stringify CLI using npm, make sure [Node.js](https://nodejs.org/) is installed on your system first.
+You can install the Stringify CLI using npm, make sure [Node.js](https://nodejs.org/) version 10 or higher is installed on your system first.
 
 Run the following command to install the Stringify CLI globally:
 ```bash
