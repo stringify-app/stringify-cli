@@ -45,6 +45,9 @@ You will be run through the following steps:
 The `stringify sync` command runs the [push](#push) and [pull](#pull) commands sequentially. 
 We recommend you to use this command instead of running the `push` and `pull` commands separately.
 
+**-f, --force**
+Executes the command in force mode, see the `--force` section of the [push](#push) command for more information.
+
 ### pull
 `stringify pull` downloads the latest version of the locale files from the server and stores them at the specified locations (see [config](#config)).
 Existing locale files will be overwritten with the downloaded version. 
@@ -54,12 +57,17 @@ Therefore, we recommend you to run the `push` command first, or just use the `sy
 ### push
 The `stringify push` command uploads the changes in your local locale files to the server. 
 Firstly, the local changes are inspected by comparing your local files with the latest version that was pulled from the server.
-The CLI lists all updated, created and deleted strings, and confirms wether the changes can be pushed to the server. 
+The CLI lists all updated, created and deleted strings, and confirms whether the changes can be pushed to the server. 
 In case another user changed or added the same string after your last pull, a conflict occurs. 
 The CLI will subsequently ask you which version should be used in the final version.
 
-If new strings were created, you will be asked wether these strings should be marked as translated or not. 
+If new strings were created, you will be asked whether these strings should be marked as translated or not. 
 This can be useful when the created strings contain dummy or temporary content, that still needs to be translated by the editor.
+
+**-f, --force**
+When using the `--force` option, the CLI won't ask you to confirm the mutations. 
+New strings will always be marked as 'Untranslated', and conflicts will result in an error. 
+This makes the CLI suitable for use in automated processes like CI software.
 
 ## Config file
 The `stringify.config.json` file defines the Stringify settings for your project directory. 
