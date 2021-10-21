@@ -19,16 +19,25 @@ const paths = {
 
 const baseConfig = Object.assign({ paths }, globalConfig);
 
+const getUserConfiguration = async (path) => {
+  if (!!process.env.STRINGIFY_API_TOKEN) {
+    return {
+      token: process.env.STRINGIFY_API_TOKEN.trim(),
+    }
+  }
+  
+  return JSON.parse(await fs.readFile(paths.config, 'utf8'));
+}
+
 async function start(){
 
     try {
 
-        if (!fs.existsSync(paths.config)) {
+        if (!process.env.STRINGIFY_API_TOKEN && !fs.existsSync(paths.config)) {
             await configureCommand(baseConfig);
         }
 
-        const configJson = await fs.readFile(paths.config, 'utf8');
-        const userConfig = JSON.parse(configJson);
+        const userConfig = await getUserConfiguration(paths.config);
         const config = Object.assign(baseConfig, userConfig);
 
         const program = createProgram(config);
