@@ -27,6 +27,7 @@ Below you can find a list of all commands and their function:
 The `stringify config` command configures the Stringify CLI, this process starts automatically when the CLI is used for the first time.
 Instructions will be provided which lead you trough the steps of obtaining an API-token. 
 This token should be provided to the Stringify CLI in order to communicate with the server. 
+You can also use environment variable `STRINGIFY_API_TOKEN` usefull in CI environment.
 
 ### init
 Run `stringify init` in order to initialize a Stringify project in your current working directory.
